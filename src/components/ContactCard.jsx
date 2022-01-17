@@ -35,7 +35,7 @@ function ContactCard({ contact }) {
 					{contact.email}
 				</p>
 				<Link className="contactCard__btn" to={`${contact.id}`}>
-					Show contact
+					Edit contact
 				</Link>
 			</div>
 		</div>

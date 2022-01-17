@@ -17,6 +17,7 @@ a {
 a,
 button {
 	cursor: pointer;
+	transition: 0.2s linear;
 }
 
 img {
@@ -69,9 +70,6 @@ img {
 }
 .contactCard__img {
 	padding: 10px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 .contactCard__img__inner {
 	width: 100px;
@@ -112,10 +110,70 @@ img {
 	font-weight: 600;
 	border: 1px solid #333;
 	border-radius: 3px;
-	transition: 0.2s linear;
 }
 
 .contactCard__btn:hover {
 	background-color: #333;
 	color: #fff;
+}
+
+/* contact styles */
+
+.contact {
+	height: 100vh;
+	background-color: #6867ac;
+}
+
+.contact__inner,
+.contact__form-actions,
+.contact,
+.contactCard__img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact__form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #fff;
+	padding: 32px;
+	border-radius: 10px;
+}
+
+.contact__form-item {
+	margin-bottom: 15px;
+}
+
+.contact__form-item input {
+	width: 100%;
+	padding: 10px 15px;
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	outline: none;
+	border: 1px solid rgba(33, 33, 33, 0.35);
+	border-radius: 2px;
+	font-size: 16px;
+}
+
+.contact__form__label {
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	margin-bottom: 8px;
+}
+
+.contact__form-btn {
+	padding: 10px 20px;
+	margin-right: 20px;
+	background-color: #333;
+	color: #fff;
+	border: 1px solid #333;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.contact__form-btn:hover {
+	color: #333;
+	background-color: transparent;
 }
