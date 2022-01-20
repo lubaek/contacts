@@ -143,7 +143,8 @@ img {
 .contact__inner,
 .contact__form-actions,
 .contact,
-.contactCard__img {
+.contactCard__img,
+.add-btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -198,4 +199,23 @@ img {
 	border: 1px solid #6867ac;
 	background-color: transparent;
 	color: #6867ac;
+}
+
+/* common styles */
+
+.add-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	font-size: 20px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: none;
+	background-color: #6867ac;
+	color: #fff;
+}
+
+.add-btn:hover {
+	transform: scale(1.2);
 }

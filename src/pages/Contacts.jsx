@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import ContactCard from "../components/ContactCard";
 import Header from "../components/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { dummyContacts } from "../utils/dummyContacts";
 
 function Contacts() {
@@ -23,10 +26,16 @@ function Contacts() {
 							return <ContactCard key={contact.id} contact={contact} />;
 						})
 					) : (
-						<p>Sign in to view all contacts</p>
+						<p>Sign in to view contacts</p>
 					)}
 				</div>
 			</div>
+
+			{isUserSignedIn && (
+				<Link className="add-btn" to="add">
+					<FontAwesomeIcon icon={faUserPlus} />
+				</Link>
+			)}
 		</>
 	);
 }

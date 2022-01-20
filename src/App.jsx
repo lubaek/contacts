@@ -9,6 +9,7 @@ function App() {
 			<Routes>
 				<Route exact path="/" element={<Contacts />} />
 				<Route path="/:id" element={<Contact />} />
+				<Route path="/add" element={<Contact />} />
 			</Routes>
 		</BrowserRouter>
 	);

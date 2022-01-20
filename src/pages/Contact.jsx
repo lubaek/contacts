@@ -75,7 +75,7 @@ function Contact() {
 							Back
 						</button>
 						<button className="contact__form-btn" onClick={() => navigate("/")}>
-							Save
+							{id ? "Save" : "Add"}
 						</button>
 					</div>
 				</form>
