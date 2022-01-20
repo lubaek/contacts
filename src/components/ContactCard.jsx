@@ -5,6 +5,7 @@ import {
 	faMapMarkerAlt,
 	faPhoneAlt,
 	faEnvelope,
+	faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 
 import contactImg from "../images/5fATtiHqr5I.jpg";
@@ -35,7 +36,7 @@ function ContactCard({ contact }) {
 					{contact.email}
 				</p>
 				<Link className="contactCard__btn" to={`${contact.id}`}>
-					Edit contact
+					<FontAwesomeIcon icon={faEdit} />
 				</Link>
 			</div>
 		</div>

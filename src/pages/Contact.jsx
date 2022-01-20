@@ -74,7 +74,9 @@ function Contact() {
 						<button className="contact__form-btn" onClick={() => navigate("/")}>
 							Back
 						</button>
-						<button className="contact__form-btn">Save</button>
+						<button className="contact__form-btn" onClick={() => navigate("/")}>
+							Save
+						</button>
 					</div>
 				</form>
 			</div>
