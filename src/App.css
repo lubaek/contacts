@@ -124,9 +124,19 @@ img {
 
 .contactCard__btn {
 	position: absolute;
-	top: 15px;
-	right: 15px;
 	color: #6867ac;
+	font-size: 18px;
+}
+
+.contactCard__btn.edit {
+	top: 15px;
+	right: 45px;
+}
+.contactCard__btn.delete {
+	top: 17px;
+	right: 15px;
+	border: none;
+	background: transparent;
 }
 
 .contactCard__btn:hover {

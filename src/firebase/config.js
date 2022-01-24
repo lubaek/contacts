@@ -9,6 +9,8 @@ const firebaseConfig = {
 	storageBucket: "contacts-4e3d4.appspot.com",
 	messagingSenderId: "45917142728",
 	appId: "1:45917142728:web:6e9108dbe1b0552dd7affd",
+	databaseURL:
+		"https://contacts-4e3d4-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
 const app = initializeApp(firebaseConfig);

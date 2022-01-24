@@ -14,7 +14,7 @@ function Header({ isSignIn }) {
 
 	const googleSignOut = () => {
 		signOut(auth)
-			.then(() => console.log("sign out"))
+			.then(() => console.log("signed out"))
 			.catch((error) => console.log(error));
 	};
 	return (
