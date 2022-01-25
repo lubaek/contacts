@@ -47,14 +47,16 @@ function Contact() {
 	};
 
 	useEffect(() => {
+		let cleanupFunction = false;
 		if (id) {
 			onValue(ref(database), (snapshot) => {
 				const data = snapshot.val();
-				if (data !== null) {
+				if (data !== null && !cleanupFunction) {
 					setFormValues({ ...data.contacts[id] });
 				}
 			});
 		}
+		return () => (cleanupFunction = true);
 	}, [id]);
 
 	return (

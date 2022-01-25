@@ -20,12 +20,14 @@ function Contacts() {
 	});
 
 	useEffect(() => {
+		let cleanupFunction = false;
 		onValue(ref(database), (snapshot) => {
 			const data = snapshot.val();
-			if (data !== null) {
+			if (data !== null && !cleanupFunction) {
 				setContacts({ ...data.contacts });
 			}
 		});
+		return () => (cleanupFunction = true);
 	}, []);
 
 	return (

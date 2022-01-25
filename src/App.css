@@ -286,6 +286,14 @@ img {
 	color: grey;
 }
 
+.karma-modal__liked-icon {
+	color: #4e9f3d;
+}
+
+.karma-modal__disliked-icon {
+	color: #ff2626;
+}
+
 .karma-modal__comments {
 	overflow-y: scroll;
 	height: 200px;
