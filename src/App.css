@@ -20,6 +20,11 @@ button {
 	transition: 0.2s linear;
 }
 
+button {
+	background: transparent;
+	border: none;
+}
+
 img {
 	max-width: 100%;
 	max-height: 100%;
@@ -90,7 +95,7 @@ img {
 	position: relative;
 }
 .contactCard__img {
-	padding: 30px 0 10px;
+	padding: 50px 0 10px;
 }
 .contactCard__img__inner {
 	width: 100px;
@@ -121,22 +126,17 @@ img {
 	color: #6867ac;
 	margin-right: 10px;
 }
+.contactCard__actions {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	display: flex;
+	gap: 15px;
+}
 
 .contactCard__btn {
-	position: absolute;
 	color: #6867ac;
 	font-size: 18px;
-}
-
-.contactCard__btn.edit {
-	top: 15px;
-	right: 45px;
-}
-.contactCard__btn.delete {
-	top: 17px;
-	right: 15px;
-	border: none;
-	background: transparent;
 }
 
 .contactCard__btn:hover {
@@ -154,7 +154,11 @@ img {
 .contact__form-actions,
 .contact,
 .contactCard__img,
-.add-btn {
+.add-btn,
+.modal,
+.karma-modal__karma,
+.karma-modal__karma__likes,
+.comment__date {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -221,11 +225,119 @@ img {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
-	border: none;
 	background-color: #6867ac;
 	color: #fff;
 }
 
 .add-btn:hover {
 	transform: scale(1.2);
+}
+
+/* modal styles */
+
+.modal {
+	height: 100%;
+	width: 100%;
+	background: rgba(33, 33, 33, 0.35);
+	z-index: 4;
+	top: 0;
+	position: fixed;
+}
+.karma-modal {
+	position: relative;
+	background: #fff;
+	width: 95%;
+	max-width: 800px;
+	padding: 30px;
+	border-radius: 5px;
+}
+
+.modal__close-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.karma-modal__title {
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 24px;
+	color: #333;
+}
+.karma-modal__comments__title {
+	margin-bottom: 15px;
+}
+
+.karma-modal__karma {
+	display: flex;
+	justify-content: center;
+}
+
+.karma-modal__karma__likes {
+	margin: 0 5px;
+	gap: 3px;
+	font-size: 18px;
+}
+
+.karma-modal__karma__likes button {
+	font-size: 16px;
+	color: grey;
+}
+
+.karma-modal__comments {
+	overflow-y: scroll;
+	height: 200px;
+}
+
+/* post comment form */
+.post-comment-form {
+	margin: 10px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.post-comment-form__text {
+	padding: 15px;
+	font-family: "Nunito", sans-serif;
+	font-size: 14px;
+	border: 1px solid rgba(33, 33, 33, 0.7);
+	outline: none;
+}
+
+.post-comment-form__btn {
+	width: 130px;
+	background-color: #6867ac;
+	color: #fff;
+	align-self: end;
+	padding: 10px;
+	border: 1px solid #6867ac;
+	border-radius: 3px;
+	font-weight: bold;
+}
+.post-comment-form__btn:hover {
+	color: #6867ac;
+	background: transparent;
+}
+
+/* comment styles */
+
+.comment {
+	padding: 10px;
+	border: 1px solid rgba(33, 33, 33, 0.35);
+	border-radius: 3px;
+}
+
+.comment__text {
+	margin: 10px 0;
+	font-size: 14px;
+}
+
+.comment__date {
+	gap: 8px;
+	width: fit-content;
+	font-size: 12px;
+	color: rgba(33, 33, 33, 0.9);
 }

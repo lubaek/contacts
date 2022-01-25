@@ -8,13 +8,19 @@ function Header({ isSignIn }) {
 	const googleSignIn = () => {
 		const provider = new GoogleAuthProvider();
 		signInWithPopup(auth, provider)
-			.then((res) => console.log(res))
+			.then((res) => {
+				console.log(res);
+				localStorage.setItem("user", JSON.stringify(res.user));
+			})
 			.catch((error) => console.log(error));
 	};
 
 	const googleSignOut = () => {
 		signOut(auth)
-			.then(() => console.log("signed out"))
+			.then(() => {
+				console.log("signed out");
+				localStorage.removeItem("user");
+			})
 			.catch((error) => console.log(error));
 	};
 	return (
