@@ -158,7 +158,8 @@ img {
 .modal,
 .karma-modal__karma,
 .karma-modal__karma__likes,
-.comment__date {
+.comment__date,
+.post-comment-form__status {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -286,17 +287,9 @@ img {
 	color: grey;
 }
 
-.karma-modal__liked-icon {
-	color: #4e9f3d;
-}
-
-.karma-modal__disliked-icon {
-	color: #ff2626;
-}
-
 .karma-modal__comments {
 	overflow-y: scroll;
-	height: 200px;
+	height: 150px;
 }
 
 /* post comment form */
@@ -313,6 +306,24 @@ img {
 	font-size: 14px;
 	border: 1px solid rgba(33, 33, 33, 0.7);
 	outline: none;
+}
+
+.post-comment-form__status {
+	gap: 10px;
+	width: fit-content;
+}
+
+.post-comment-form__status-btn {
+	font-size: 16px;
+	color: grey;
+}
+
+.post-comment-form__status-btn .positive {
+	color: #4e9f3d;
+}
+
+.post-comment-form__status-btn .negative {
+	color: #ff2626;
 }
 
 .post-comment-form__btn {

@@ -22,6 +22,7 @@ function Contact() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		// if all fields are filled
 		if (
 			formValues.name &&
 			formValues.phoneNumber &&
@@ -36,7 +37,7 @@ function Contact() {
 					})
 					.catch((error) => toast.error(error));
 			} else {
-				push(ref(database, "contacts/"), formValues)
+				push(ref(database, "contacts/"), { ...formValues, likes: 0, dislikes: 0 })
 					.then(() => {
 						toast.success("Contact was added successfully");
 						navigate("/");

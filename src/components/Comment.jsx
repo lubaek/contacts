@@ -5,7 +5,7 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 function Comment() {
 	return (
 		<div className="comment">
-			<h4 className="comment__author">Klara Lu</h4>
+			<h4 className="comment__author">Klara Lu - positive karma</h4>
 			<p className="comment__text">
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo omnis sequi
 				quaerat quo ea eaque necessitatibus asperiores vero a itaque. Facere
