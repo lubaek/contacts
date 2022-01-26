@@ -19,9 +19,16 @@ function KarmaModal({ setIsModalOpen, id }) {
 	const checkIfCommentByUser = (status) => {
 		// check if contact has attribute 'comments'
 		if (contact.comments) {
-			return contact.comments.find(
-				(item) => item.email === userEmail && item.status === status
-			);
+			const currentYear = new Date().getFullYear();
+			const currentMonth = new Date().getMonth();
+			return contact.comments.find((item) => {
+				return (
+					item.email === userEmail &&
+					item.status === status &&
+					new Date(item.date).getFullYear() === currentYear &&
+					new Date(item.date).getMonth() === currentMonth
+				);
+			});
 		}
 		return false;
 	};
@@ -44,7 +51,7 @@ function KarmaModal({ setIsModalOpen, id }) {
 			update(ref(database, `/contacts/${id}`), contact).then(() =>
 				toast.success("Comment was added successfully")
 			);
-		} else toast.error(`You have already left ${status} karma!`);
+		} else toast.error(`You have already left ${status} karma in this month!`);
 	};
 
 	useEffect(() => {
@@ -70,21 +77,25 @@ function KarmaModal({ setIsModalOpen, id }) {
 				<div className="karma-modal__karma">
 					<div className="karma-modal__karma__likes">
 						<span>{contact.likes}</span>
-						<button>
-							<FontAwesomeIcon icon={faArrowUp} />
-						</button>
+						<FontAwesomeIcon icon={faArrowUp} />
 					</div>
 					<div className="karma-modal__karma__likes">
 						<span>{contact.dislikes}</span>
-						<button>
-							<FontAwesomeIcon icon={faArrowDown} />
-						</button>
+						<FontAwesomeIcon icon={faArrowDown} />
 					</div>
 				</div>
 				<PostCommentForm postComment={postComment} />
 				<h3 className="karma-modal__comments__title">Comments</h3>
 				<div className="karma-modal__comments">
-					<Comment />
+					{contact.comments ? (
+						contact.comments
+							.sort(function (a, b) {
+								return new Date(b.date) - new Date(a.date);
+							})
+							.map((item, index) => <Comment key={index} comment={item} />)
+					) : (
+						<p>No comments yet</p>
+					)}
 				</div>
 			</div>
 		</div>

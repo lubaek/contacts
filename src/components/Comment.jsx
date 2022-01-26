@@ -1,21 +1,18 @@
 import React from "react";
+import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 
-function Comment() {
+function Comment({ comment }) {
 	return (
 		<div className="comment">
-			<h4 className="comment__author">Klara Lu - positive karma</h4>
-			<p className="comment__text">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo omnis sequi
-				quaerat quo ea eaque necessitatibus asperiores vero a itaque. Facere
-				laudantium eveniet recusandae sint voluptatibus impedit facilis quo tempora
-				animi rem distinctio odit cum, enim at sed in, sequi inventore dignissimos.
-				Atque aut magni maxime possimus voluptas numquam neque!
-			</p>
+			<h4 className="comment__author">
+				{comment.author} - {comment.status} karma
+			</h4>
+			<p className="comment__text">{comment.text}</p>
 			<div className="comment__date">
 				<FontAwesomeIcon icon={faClock} />
-				<span>2 hours ago</span>
+				<span>{moment(comment.date).utc().local().fromNow()}</span>
 			</div>
 		</div>
 	);
