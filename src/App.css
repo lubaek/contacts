@@ -49,6 +49,20 @@ img {
 	justify-content: space-between;
 }
 
+.navbar {
+	gap: 20px;
+}
+
+.navbar__link {
+	color: #fff;
+	position: relative;
+	font-weight: bold;
+}
+
+.navbar__link:hover {
+	color: #333;
+}
+
 .signin-btn {
 	padding: 8px 15px;
 	border: 1px solid #fff;
@@ -74,7 +88,8 @@ img {
 
 /* contacts styles */
 
-.contacts {
+.contacts,
+.food-tracking {
 	padding: 40px 0;
 }
 
@@ -159,7 +174,8 @@ img {
 .karma-modal__karma,
 .karma-modal__karma__likes,
 .comment__date,
-.post-comment-form__status {
+.post-comment-form__status,
+.navbar {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -188,14 +204,16 @@ img {
 	font-size: 16px;
 }
 
-.contact__form__label {
+.contact__form__label,
+.tracking-form__item__label {
 	display: block;
 	font-size: 14px;
 	font-weight: 300;
 	margin-bottom: 8px;
 }
 
-.contact__form-btn {
+.contact__form-btn,
+.tracking-employee__btn {
 	padding: 10px 20px;
 	margin-right: 20px;
 	background-color: #333;
@@ -205,7 +223,8 @@ img {
 	font-size: 14px;
 }
 
-.contact__form-btn:first-child {
+.contact__form-btn:first-child,
+.tracking-employee__btn:hover {
 	color: #333;
 	background-color: transparent;
 }
@@ -300,7 +319,8 @@ img {
 	gap: 10px;
 }
 
-.post-comment-form__text {
+.post-comment-form__text,
+.tracking-form__text {
 	padding: 15px;
 	font-family: "Nunito", sans-serif;
 	font-size: 14px;
@@ -326,7 +346,8 @@ img {
 	color: #ff2626;
 }
 
-.post-comment-form__btn {
+.post-comment-form__btn,
+.tracking-form__btn {
 	width: 130px;
 	background-color: #6867ac;
 	color: #fff;
@@ -336,7 +357,8 @@ img {
 	border-radius: 3px;
 	font-weight: bold;
 }
-.post-comment-form__btn:hover {
+.post-comment-form__btn:hover,
+.tracking-form__btn:hover {
 	color: #6867ac;
 	background: transparent;
 }
@@ -359,4 +381,61 @@ img {
 	width: fit-content;
 	font-size: 12px;
 	color: rgba(33, 33, 33, 0.9);
+}
+
+/* food tracking page */
+.food-tracking__inner {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-gap: 30px;
+}
+
+.tracking-form {
+	height: fit-content;
+	width: 90%;
+	max-width: 300px;
+	padding: 20px;
+	box-shadow: 0px 1px 10px -2px #a267ac;
+	border-radius: 5px;
+}
+
+.tracking-form__item {
+	margin: 15px auto;
+}
+
+.tracking-form__text {
+	width: 100%;
+	border-radius: 3px;
+}
+
+.food-tracking__employees {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.tracking-employee {
+	padding: 15px;
+	box-shadow: 0px 1px 10px -2px #a267ac;
+	border-radius: 5px;
+	height: fit-content;
+}
+.tracking-employee__sum {
+	margin: 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.food-tracking__inner {
+		grid-template-columns: 1fr;
+		width: fit-content;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.logo {
+		display: none;
+	}
+	.header__inner {
+		justify-content: space-evenly;
+	}
 }

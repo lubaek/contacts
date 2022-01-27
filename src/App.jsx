@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Contacts from "./pages/Contacts";
 import Contact from "./pages/Contact";
+import FoodTracking from "./pages/FoodTracking";
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 				<Route exact path="/" element={<Contacts />} />
 				<Route path="/:id" element={<Contact />} />
 				<Route path="/add" element={<Contact />} />
+				<Route path="/food" element={<FoodTracking />} />
 			</Routes>
 		</BrowserRouter>
 	);

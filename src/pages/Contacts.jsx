@@ -32,7 +32,7 @@ function Contacts() {
 
 	return (
 		<>
-			<Header isSignIn={isUserSignedIn} contacts={contacts} />
+			<Header isSignIn={isUserSignedIn} />
 			<div className="contacts">
 				<div className="contacts__inner container">
 					{isUserSignedIn ? (

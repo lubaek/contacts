@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -32,9 +33,17 @@ function Header({ isSignIn }) {
 						Breez Contacts
 					</a>
 					{isSignIn ? (
-						<button className="signin-btn" onClick={googleSignOut}>
-							SIGN OUT
-						</button>
+						<nav className="navbar">
+							<Link className="navbar__link" to="/">
+								Contacts
+							</Link>
+							<Link className="navbar__link" to="/food">
+								Food tracking
+							</Link>
+							<button className="signin-btn" onClick={googleSignOut}>
+								SIGN OUT
+							</button>
+						</nav>
 					) : (
 						<button className="signin-btn" onClick={googleSignIn}>
 							SIGN IN
