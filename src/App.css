@@ -261,9 +261,11 @@ img {
 	background: rgba(33, 33, 33, 0.35);
 	z-index: 4;
 	top: 0;
+	left: 0;
 	position: fixed;
 }
-.karma-modal {
+.karma-modal,
+.tracking-history {
 	position: relative;
 	background: #fff;
 	width: 95%;
@@ -280,7 +282,8 @@ img {
 	color: #fff;
 }
 
-.karma-modal__title {
+.karma-modal__title,
+.tracking-history__title {
 	text-align: center;
 	margin-bottom: 15px;
 	font-size: 24px;
@@ -365,7 +368,8 @@ img {
 
 /* comment styles */
 
-.comment {
+.comment,
+.tracking-history__item {
 	padding: 10px;
 	border: 1px solid rgba(33, 33, 33, 0.35);
 	border-radius: 3px;
@@ -397,6 +401,7 @@ img {
 	padding: 20px;
 	box-shadow: 0px 1px 10px -2px #a267ac;
 	border-radius: 5px;
+	margin: 0 auto;
 }
 
 .tracking-form__item {
@@ -424,14 +429,31 @@ img {
 	margin: 10px 0;
 }
 
+.tracking-history__container {
+	overflow-y: scroll;
+	height: 300px;
+}
+
+.tracking-history__date,
+.tracking-history__sum {
+	margin: 5px 0;
+}
+
+.tracking-history__date span,
+.tracking-history__sum span {
+	font-weight: bold;
+	color: #000;
+}
+
 @media only screen and (max-width: 600px) {
 	.food-tracking__inner {
 		grid-template-columns: 1fr;
 		width: fit-content;
 	}
-}
 
-@media only screen and (max-width: 400px) {
+	.food-tracking__employees {
+		justify-content: center;
+	}
 	.logo {
 		display: none;
 	}
